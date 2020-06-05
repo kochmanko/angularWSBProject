@@ -1,0 +1,43 @@
+
+<div class="main">
+<h1>What kind of article do you want to find?</h1>
+
+
+<div class="question">
+    <img class="icon" src="../assets/search.png"/>
+    <label> <br> Which phase you want to find?<br></label>
+<input type="text" [(ngModel)]="phase" placeholder="Write article phase to find">
+
+</div>
+ 
+<div  class="question">
+    <img class="icon" src="../assets/power.png"/>
+    <span> <br>Which start date?<br></span>
+    <input type="date" [(ngModel)]="startDate" placeholder="Write start date">
+</div>
+
+<div  class="question">
+    <img class="icon" src="../assets/the-end.png"/>
+    <span> <br>Which end date?<br></span>
+    <input type="date"  [(ngModel)]="endDate" placeholder="Write end date">
+</div>
+
+<div  class="question">
+    <img class="icon"  (click) = "changeSort()" src='{{ "../assets/"+sort+".png" }}'>
+    <span class="questionTag"> <br>Sort from: {{sort}}<br></span>
+    <span style="font-size:15px;"> Click the icon to change the sort type </span>    
+</div>
+
+<div>
+<button class="findBtn" (click)="find()" [disabled]="!phase || !startDate || !endDate">Let's find it!</button>
+</div>
+
+<div>
+    <img src="https://media.giphy.com/media/mWaLPeeQLPT3i/giphy.gif">
+</div>
+
+
+<li *ngFor="let user of arcticles">    
+    <a href="{{user.web_url | safe}}">{{user.headline.main}}</a> 
+</li>
+</div>

@@ -1,0 +1,11 @@
+.appMainStyle{
+    background-color: #f3ba0c;
+    text-align:center;
+    font-family: sans-serif;
+    margin-top: 1%;
+    font-size: 27px;
+    
+}
+.appMainStyle h1{
+    padding-top:7%;
+}
