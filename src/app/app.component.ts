@@ -8,7 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Klaudia Searcher Project';
 
-  func(val){
-    console.warn('COunter changed:'+val);
-  }
+ 
 }

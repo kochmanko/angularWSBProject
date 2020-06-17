@@ -1,12 +1,17 @@
 <div class="appMainStyle">
    
-    <!-- WELCOME SCREEN AND PICTURE -->
-    <h1>Welcome to {{title}}!</h1>
-    <img width="300" alt="" style="border-radius: 20%;margin-bottom:5%;"
-        src="https://media.giphy.com/media/26FPC5oAdfeFPkQQE/giphy.gif">
+    
+    <!--START PART MENU -->
+    <mainMenu></mainMenu>
 
-    <!-- SEARCHER PART-->   
-    <searcher></searcher>
+   
 
+        <router-outlet>
+        </router-outlet>
+  
 
-    </div>
+    <!--END PART-->
+    <information></information>
+    
+
+</div>

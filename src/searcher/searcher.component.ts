@@ -27,6 +27,7 @@ constructor(public appInfo: AppInfoService){
   this.phase="";
   this.isActive=false;
   this.sort="newest";
+  //document.getElementById("processingImg").style.display="none";
   //this.startDate = "20171201";
   //this.endDate="20180430";
 }   
@@ -40,24 +41,46 @@ changeSort(){
       this.sort="newest";
   }
 }
+
+async delay(ms: number) {
+  await new Promise(resolve => setTimeout(()=>resolve(), ms)).then(()=>this.searchForResults());
+}
+
+errorInfo(error){
+  console.error(error);
+  this.showNoResult();
+}
+
+showNoResult(){
+  document.getElementById("errorInfo").style.display="inline";
+}
+searchForResults(){
+ 
+
+  var startDateStr = this.startDate.toString().slice(0,10).replace(/-/g,"");
+  var endDateStr = this.endDate.toString().slice(0,10).replace(/-/g,"");
+  this.appInfo.getArticles(this.phase,startDateStr, this.endDate,this.sort).then(response => { console.log(response);
+    this.art = response;      
+    this.arcticles = this.art.response.docs; 
+    console.log("response:"+response);
+    console.log("this.arcticles:"+this.arcticles);
+    var test=this.arcticles.toString();
+    if(test=="")      
+    {
+      console.log("null");
+      this.showNoResult();
+    }
+  }).catch(error => this.errorInfo(error));
+  this.isActive=true;
+
+  document.getElementById("processingImg").style.display="none";
+  document.getElementById("findBtn").style.display="inline";
+  document.getElementById("listStyleName").style.display="inline";
+}
+
 find(){
-      console.log("clicked");
-      console.log(this.phase);
-    
-      var startDateStr = this.startDate.toString().slice(0,10).replace(/-/g,"");
-      var endDateStr = this.endDate.toString().slice(0,10).replace(/-/g,"");
-
-      console.log(startDateStr);
-      this.appInfo.getArticles(this.phase,startDateStr, this.endDate,this.sort).then(response => { console.log(response);
-        this.art = response;
-        console.log("Art:");
-        console.log(this.art.response.docs);
-        this.arcticles = this.art.response.docs;
-        console.log("After:");
-        console.log(this.arcticles);
-      }).catch(error => console.error(error));
-      this.isActive=true;
-      
-  }  
-
+  document.getElementById("processingImg").style.display="inline";
+  document.getElementById("findBtn").style.display="none";
+  this.delay(2000);
+}
 }

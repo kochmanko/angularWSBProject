@@ -1,0 +1,14 @@
+.main{
+    background-color: #0ba587;
+    font-family: sans-serif;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 20px;
+    display: block;
+    font-weight: bold;
+}
+
+.icon{
+    width: 150px;
+    right: 0px;
+}

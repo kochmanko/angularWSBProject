@@ -29,15 +29,25 @@
 </div>
 
 <div>
-<button class="findBtn" (click)="find()" [disabled]="!phase || !startDate || !endDate">Let's find it!</button>
+<button id="findBtn" (click)="find()" [disabled]="!phase || !startDate || !endDate" [ngClass]="[(!phase || !startDate || !endDate)? 'findBtnDisable' : 'findBtn']">Let's find it!</button>
 </div>
 
 <div>
-    <img src="https://media.giphy.com/media/mWaLPeeQLPT3i/giphy.gif">
+    <!--<img class="processingImg" id="processingImg" src="https://media.giphy.com/media/mWaLPeeQLPT3i/giphy.gif">-->
+    <img class="processingImg" id="processingImg" src="../assets/processing.gif">
 </div>
 
 
-<li *ngFor="let user of arcticles">    
-    <a href="{{user.web_url | safe}}">{{user.headline.main}}</a> 
+<div class="listStyle">
+    <h1  id="listStyleName" class="listStyleName">List of articles:</h1>
+    <p id="errorInfo" ><br>No result of the search... Please try again!</p>
+<li class="listStyle" *ngFor="let user of arcticles">    
+    <a>{{user.headline.main}}</a> 
+   <!-- <a href="{{user.web_url | safe}}" target="_blank"> Go read it!</a>-->
+   <a href="{{user.web_url | safe}}" target="_blank">
+       <img class="goToArticleIcon" src="../assets/play-button.png">
+   </a>
 </li>
+
+</div>
 </div>

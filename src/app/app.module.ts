@@ -9,6 +9,10 @@ import {appRoutes} from './app.routes';
 import {RouterModule} from '@angular/router';
 import {SafePipe} from 'src/searcher/pipe.component';
 import {SearcherComponent} from 'src/searcher/searcher.component';
+import {InformationComponent} from 'src/information/information.component';
+import {MenuComponent} from 'src/menu/menu.component';
+import {WelcomeComponent} from 'src/welcome/welcome.component';
+import {ErrorComponent} from 'src/error/error.component';
 
 
 @NgModule({
@@ -23,6 +27,10 @@ import {SearcherComponent} from 'src/searcher/searcher.component';
     AppComponent, 
     SafePipe,
     SearcherComponent,
+    InformationComponent,
+    MenuComponent,
+    WelcomeComponent,
+    ErrorComponent
   ],
   providers: [AppInfoService],
   bootstrap: [AppComponent]

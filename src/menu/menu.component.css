@@ -1,0 +1,17 @@
+.mainMenu{
+    background-color: #0ba587;
+    align-items: center;
+    
+}
+
+.navBar{
+    margin-top:2%;
+    display: inline-block;
+    margin-left:3%;
+    font-size:17px;
+    font-weight: bolder;
+    font-family: sans-serif;
+    padding-bottom: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+}

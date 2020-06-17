@@ -5,6 +5,39 @@
     font-size: 27px;
 }
 
+.goToArticleIcon{
+    width: 2%;
+    vertical-align: middle;
+    padding-left: 1%;
+}
+#errorInfo{
+    display: none;
+}
+.listStyle{
+    padding-top:4%;
+    margin-top:4%;
+    padding-bottom:4%;
+    background-color:#f3ba0c;
+    color:black;
+    font-family: sans-serif;
+    font-size: 24px;
+}
+.listStyleName{
+    display:none;
+    font-family: sans-serif;
+    padding-top: 3%;
+    color:black;
+    font-size: 2em!important;
+}
+li.listStyle {
+    margin-top:1%!important;
+    margin-bottom:0%!important;
+    list-style-type: " ";
+    padding-top:0%!important;
+    padding-bottom:0%!important;
+    background-color: #0ba587!important;
+}
+
 .icon{
     align-items: center;
     height: 100px;
@@ -20,6 +53,25 @@
     color:black;
     width: 20%;
     height: 50px;
+}
+
+.findBtnDisable{
+    background-color: gray;
+    font-size:25px;
+    font-family: sans-serif;
+    font-weight: bolder;
+    color:black;
+    width: 20%;
+    height: 50px;
+}
+
+.processingImg{
+    display: none;
+    width: 4%;
+}
+
+.processingImgShow{
+    display: block;
 }
 
 .question{

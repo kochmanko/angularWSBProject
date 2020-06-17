@@ -1,0 +1,16 @@
+.mainMenu{
+    background-color: #0ba587;
+    align-items: center;
+    
+}
+
+.errorDiv{
+    display: inline;
+}
+.errorImg{
+   width: 40%;
+}
+
+.errorHeader{
+    padding-bottom: 10%;
+}
