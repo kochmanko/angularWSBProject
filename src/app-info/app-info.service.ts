@@ -8,10 +8,10 @@ export class AppInfoService{
 
     constructor(public http:HttpClient){}
  
-    getArticles(phrase, startDate,endDate,sort){
+    getArticles(phrase, startDate,endDate,sort,pageNo){
          
          var searchString = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=D9CGHALAe1bVGseQQ8ftSovuc9YYXT7r&q="
-        +phrase+ "&fl=headline,web_url&begin_date="+startDate+"&end_date="+endDate+"&sort="+sort;
+        +phrase+ "&fl=headline,web_url&begin_date="+startDate+"&end_date="+endDate+"&sort="+sort+"&page="+pageNo;
          var test = this.http.get(searchString).toPromise();
          
          console.log(test);

@@ -39,7 +39,14 @@
 
 
 <div class="listStyle">
-    <h1  id="listStyleName" class="listStyleName">List of articles:</h1>
+    <h1  id="listStyleName" class="listStyleName">List of articles:<br></h1>
+    <div class="paging" id="paging">
+        <p  (click)="goFirst()" >First page</p>
+        <img class="pagingElem" (click)="goPrevious()" src="https://img.icons8.com/bubbles/50/000000/circled-chevron-left.png"/>
+        <p >{{this.pageNo}}/{{maxPage}}</p>
+        <img class="pagingElem" (click)="goNext()" src="https://img.icons8.com/bubbles/50/000000/circled-chevron-right.png"/>
+        <p  (click)="goLast()">Last page</p>
+    </div>
     <p id="errorInfo" ><br>No result of the search... Please try again!</p>
 <li class="listStyle" *ngFor="let user of arcticles">    
     <a>{{user.headline.main}}</a> 
